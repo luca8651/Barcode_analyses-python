@@ -4,10 +4,10 @@ Collection of scripts used for the clustering and representation analysis of DNA
 
 
 ## calculate_enrichment_barcodes_z_test.py  countfile  countfile2
-This script is used to compare sets of barcodes in different samples/datasets, identify the common ones, and test for differences in barcode representation.    The script takes as input 2 tab delimited files. Each file represents a single sample/dataset. Barcodes are organised by row: the ID/barcode sequence is stored in column 2, and the corresponding count is on column 1. For each barcode common between the 2 datasets, the script performs a z test for proportions, testing whether the barcode has a significantly different representation in one dataset compared to the other. The proportion for a barcode is calculated as counts for the barcode divided by the total counts in the dataset.
+This script is used to compare sets of barcodes in different samples/datasets, identify the common ones, and test for differences in barcode representation. The script takes as input 2 tab delimited files. Each file represents a single sample/dataset. Barcodes are organised by row: the ID/barcode sequence is stored in column 2, and the corresponding count is on column 1. For each barcode common between the 2 datasets, the script performs a z test for proportions, testing whether the barcode has a significantly different representation in one dataset compared to the other. The proportion for a barcode is calculated as counts for the barcode divided by the total counts in the dataset.
 
-## count_barcodes_in_file.py  seqfile countfile 
-This script is used to check for the presence, and extract the counts of, a collection of barcodes. It takes a count file and a barcode list as input (first and second arguments). The count file is formatted the same way as the input files for *calculate_enrichment_barcodes_z_test.py* . The barcode list is a txt file listing the ID/barcode sequence, one for each line. 
+## count_barcodes_in_file.py  barcodefile countfile 
+This script is used to check for the presence, and extract the counts of, a collection of barcodes. It takes a barcode list and a count file as input (first and second arguments). The barcode list is a txt file listing the ID/barcode sequence, one for each line. The count file is formatted the same way as the input files for *calculate_enrichment_barcodes_z_test.py* . 
 
 
 ## calculate_mean_freq_fraction.py countfile  countfile2 countfile3  countfile4 countfile5
