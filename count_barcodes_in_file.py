@@ -14,21 +14,14 @@ from difflib import SequenceMatcher
 
 filename = sys.argv[1]
 countfile = sys.argv[2]
-#average = int(sys.argv[2])
-#min_qual = int(sys.argv[3])
-#size = sys.argv[2]
-#normal=list([''])
-#tumor=list([''])
 
 cont=0
-#cont2=0
 
 count_dict = dict([])
 seq_dict= dict([])
 
 with open(countfile,'r') as f:
 	for line in f:
-		#reader=csv.reader(line,delimiter='\t')
 		line1=line.split("\t")
 		seq=line1[1]
 		count=line1[0]
@@ -40,11 +33,7 @@ with open(filename,'r') as f:
 		seq=line
 		seq=seq.strip('\n')
 		seq_dict[seq]=seq
-#		print("count for seq "+ seq + " is "+count_dict[seq])
 		if seq in count_dict:
 			print(count_dict[seq]+"\t"+seq)
 		else:
 			print("0\t"+seq)
-
-
-		
