@@ -11,10 +11,7 @@ from statsmodels.stats.proportion import proportions_ztest
 
 
 #script to check for presence and count a set of barcodes in a file
-#
 #usage: calculate_enrichment*.py countfile  countfile2
-
-#outdir = sys.argv[1]
 
 countfile = sys.argv[1]
 countfile2 = sys.argv[2]
@@ -37,7 +34,6 @@ nreads5=0
 
 with open(countfile,'r') as f:
 	for line in f:
-		#reader=csv.reader(line,delimiter='\t')
 		line1=line.split("\t")
 		seq=line1[1]
 		count=line1[0]
@@ -45,7 +41,6 @@ with open(countfile,'r') as f:
 		seq=seq.strip('\n')
 		if not seq in count_dict:
 			count_dict[seq]=zeros([1,5])
-#		print(str(count_dict[seq]))
 		count_dict[seq][0]=float(count)
 
 with open(countfile2,'r') as f:
@@ -97,8 +92,6 @@ nreads_array=[nreads,nreads2,nreads3,nreads4,nreads5]
 
 for seq in count_dict:
 	if seq in count_dict:
-#		prop1=count_dict[seq]/nreads_array
 		prop1=count_dict[seq]
 		prop=np.average(prop1)
-#		print(str(seq)+"\t"+str(prop1)+"\t"+str(prop)+"\t"+str(count_dict[seq])+"\t"+str(nreads_array)  )
 		print(str(seq)+"\t"+str(prop))
