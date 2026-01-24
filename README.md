@@ -1,6 +1,6 @@
 # Barcode_analyses-python
 
-Collection of scripts used for the clustering and representation analysis of DNA barcode sequences.
+Collection of scripts used to study clonal evolution in DNA barcoded, ER+ breast cancer cell line populations
 
 
 ## calculate_enrichment_barcodes_z_test.py
